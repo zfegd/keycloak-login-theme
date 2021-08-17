@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  keycloak:
+    build: .
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: adminpass
+      KEYCLOAK_DEFAULT_THEME: appendage
+    restart: always
+    # COMMAND: ["sed", "-i", "'s/2592000/-1/g'", "/keycloak/standalone/configuration/standalone.xml"]
+    ports:
+      - 8080:8080
